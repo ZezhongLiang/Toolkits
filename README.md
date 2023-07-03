@@ -5,14 +5,14 @@ Toolkits for generic purposes related to astronomical data reduction and analysi
 
 * Add: `yoshida_4_1990.py`. This `*.py` file implements 4-th-order Yoshida algorithm for integration of equation of motion. This algorithm is simple but symplectic. As an example, we define a force field corresponding to a galaxy whose rotation curve is flat.
 
-<pre>
+<pre class="python">
 def flat_rc(x, v, *args, **kwargs):
     return -x * 1.0 / np.sum(np.square(x))
 </pre>
 
 Any mass-point orbiting the potential centre with velocity vector along the azimuthal direction and length $v=1$ should therefore trace a circular orbit. Now implement the integration numerically and observe the results.
 
-<pre>
+<pre class="python">
 results = yoshida_4_1990.motion_solver(
     method=yoshida_4_1990.yoshida_4,
     acc=flat_rc,
