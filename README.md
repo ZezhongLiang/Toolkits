@@ -12,7 +12,7 @@ Toolkits for generic purposes related to astronomical data reduction and analysi
 save the `txt` file as `demo.txt` under the same working directory as the code. In console, input
 
 <pre class="bash">
-cd <your_working_directory>
+cd &lt;your_working_directory&gt;
 python ./solve_mat.py
 </pre>
 
