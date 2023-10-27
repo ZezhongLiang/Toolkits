@@ -1,6 +1,23 @@
 # Toolkits
 Toolkits for generic purposes related to astronomical data reduction and analysis.
 
+## Change log: 27. Okt 2023
+
+* Add: `solve_mat.py`. This `*.py` file solves matrix puzzle using greedy method. Save the matrix puzzle you want to solve as comma-separated-values (CSV) in a txt file, e.g.
+
+<pre>
+8,6,6,2,3,8,7,7,3,5,9,8,3,5,7,4,5,7,7,8,4,3,4,9,7,5,2,4,3,7,2,4,5,6,4,3,7,8,1,9,8,1,2,6,5,9,2,5,1,1,3,2,1,9,3,8,9,4,8,2,2,8,3,7,5,9,2,3,3,5,6,1,6,9,6,8,6,5,5,5,2,4,1,7,2,8,4,5,9,2,1,9,8,7,1,6,8,6,3,1,7,1,3,2,7,5,9,3,9,8,3,2,5,6,7,8,1,6,8,3,9,9,5,3,7,6,7,8,9,9,9,2,2,2,3,2,9,2,1,9,5,6,7,7,2,9,5,2,4,9,6,5,8,2,3,7,3,8,3,3
+</pre>
+
+save the txt file either as `demo.txt` under the same working directory as the code. In console, input
+
+<pre class="bash">
+cd \le;your_working_directory\ge;;
+python ./solve_mat.py
+</pre>
+
+and observe the result.
+
 ## Change log: 3. Juli 2023
 
 * Add: `yoshida_4_1990.py`. This `*.py` file implements 4-th-order Yoshida algorithm for integration of equation of motion. This algorithm is simple but symplectic. As an example, we define a force field corresponding to a galaxy whose rotation curve is flat.
