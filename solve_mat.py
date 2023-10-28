@@ -35,6 +35,8 @@ except ImportError as _:
 # User preference
 WIDTH = 10
 HEIGHT = 16
+WT_BORDER = 30
+S_BORDER = 2
 TARGET_SUM = 10
 MAX_SIZE = 15
 FIGSIZE = (2.5, 5.0)
@@ -98,6 +100,13 @@ def solve_matrix_single(mat: np.ndarray) -> np.ndarray:
     Returns:
         np.ndarray: summary of solution.
     """
+
+    wts = np.ones_like(mat, dtype=np.int64)
+
+    if S_BORDER > 0:
+        wts[:S_BORDER] = wts[-S_BORDER:] = wts[:, :S_BORDER] = wts[
+            :, -S_BORDER:
+        ] = WT_BORDER
 
     sub_mats = list()
     sub_mats_repr = list()
@@ -207,7 +216,7 @@ def solve_matrix_single(mat: np.ndarray) -> np.ndarray:
             if np.any(np.sum(_mats_sub_this, axis=0) > 1):
 
                 continue
-            elif np.sum(_mats_sub_this) > _yield_best:
+            elif np.sum(_mats_sub_this * wts) > _yield_best:
                 _ids_best = _ids_include
 
         ids_sub_mat_final.extend(_ids_best)
@@ -250,15 +259,15 @@ def plot_figure(mat: np.ndarray, summary: np.ndarray | None) -> int:
     if summary is not None:
         ax.imshow(summary, cmap=cmap_summary)
 
-    for (_i, _j) in itertools.product(range(16), range(10)):
+    for (_i, _j) in itertools.product(range(HEIGHT), range(WIDTH)):
         if mat[_i, _j] > 0:
             ax.text(_j, _i, mat[_i, _j], ha='center', va='center')
 
     # Set ticks and axes
     ax.set_xticks(list())
     ax.set_yticks(list())
-    ax.set_xticks(np.arange(10) + 0.5, minor=True)
-    ax.set_yticks(np.arange(16) + 0.5, minor=True)
+    ax.set_xticks(np.arange(WIDTH) + 0.5, minor=True)
+    ax.set_yticks(np.arange(HEIGHT) + 0.5, minor=True)
     ax.grid(which='minor', c='lightgrey')
 
     return 0
