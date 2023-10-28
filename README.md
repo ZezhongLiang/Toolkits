@@ -3,6 +3,10 @@ Toolkits for generic purposes related to astronomical data reduction and analysi
 
 ## Change log: 27. Okt 2023
 
+* Update: `solve_mat.py`, fix known issues regarding size.
+  
+## Change log: 27. Okt 2023
+
 * Add: `solve_mat.py`. This `*.py` file solves matrix puzzle using greedy method. Save the matrix puzzle you want to solve as comma-separated-values (CSV) in a `txt` file, e.g.
 
 <pre>
