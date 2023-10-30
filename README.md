@@ -1,7 +1,11 @@
 # Toolkits
 Toolkits for generic purposes related to astronomical data reduction and analysis.
 
-## Change log: 27. Okt 2023
+## Change log: 30. Okt 2023
+
+* Update: `solve_mat.py`, iterative search method is now added.
+
+## Change log: 28. Okt 2023
 
 * Update: `solve_mat.py`, fix known issues regarding size.
   
